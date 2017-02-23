@@ -1,19 +1,18 @@
 class Albums
-  attr_accessor :artist, :price, :quantity, :sale_price
-  def initialize(artist, price, quantity, sale_price)
-    @album = album.to_s
-    @artist = artist.to_s
-    @price = price.to_f
-    @quantity = quantity.to_i
-    @sale_price = sale_price.to_f
+  attr_accessor :artist, :price, :quantity
+  def initialize(album_name, artist, price, quantity)
+    @album = album_name
+    @artist = artist
+    @price = price
+    @quantity = quantity
   end
 
-  def sell_a_copy(album)
-    quantity -= 1
+  def sell_a_copy
+    @quantity -= total_sold
   end
 
   def more_copies_in_stock(amount_added)
-    quantity += amount_added
+    @quantity += amount_added
   end
 
 
